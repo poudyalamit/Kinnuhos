@@ -10,7 +10,7 @@ const Tshirts = () => {
           <div className="flex flex-wrap -m-4">
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -21,7 +21,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -32,7 +32,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -43,7 +43,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -54,7 +54,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -65,7 +65,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -76,7 +76,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -87,7 +87,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -98,7 +98,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -109,7 +109,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -120,7 +120,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -131,7 +131,7 @@ const Tshirts = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
-                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_UX385_.jpg" />
+                <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />
               </a>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>

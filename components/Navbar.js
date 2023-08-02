@@ -6,12 +6,12 @@ import { BsFillBagCheckFill } from 'react-icons/bs'
 import { AiFillCloseCircle, AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 
 const Navbar = () => {
-  const ref=useRef();
-  const toggleCart=()=>{
-    if (ref.current.classList.contains('translate-x-full')){
+  const ref = useRef();
+  const toggleCart = () => {
+    if (ref.current.classList.contains('translate-x-full')) {
       ref.current.classList.remove('translate-x-full')
       ref.current.classList.add('translate-x-0')
-    }else if(!ref.current.classList.contains('translate-x-full')){
+    } else if (!ref.current.classList.contains('translate-x-full')) {
       ref.current.classList.remove('translate-x-0')
       ref.current.classList.add('translate-x-full')
     }
@@ -33,48 +33,51 @@ const Navbar = () => {
         <FaShoppingCart className='text-xl md:text-2xl' />
       </div>
 
-      <div ref={ref} className="w-72 h-full sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform translate-x-full ">
+      <div ref={ref} className="w-72 h-full sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform translate-x-full z-10">
         <h2 className='font-bold text-xl text-center'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-5 right-2 cursor-pointer text-2xl text-green-600"><AiFillCloseCircle /></span>
         <ol className='list-decimal font-semibold'>
           <li>
             <div className="item flex my-5">
-            <div className='w-2/3 font-semibold'>Tshirts</div>
-            <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
-              <AiOutlineMinusCircle className='cursor-pointer text-green-800'/>
-              <span className='mx-2 text-sm'>1</span>
-              <AiOutlinePlusCircle className='cursor-pointer text-green-800'/></div>
+              <div className='w-2/3 font-semibold'>Tshirts</div>
+              <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
+                <AiOutlineMinusCircle className='cursor-pointer text-green-800' />
+                <span className='mx-2 text-sm'>1</span>
+                <AiOutlinePlusCircle className='cursor-pointer text-green-800' /></div>
             </div>
           </li>
           <li >
             <div className="item flex my-5">
-            <div className='w-2/3 font-semibold'>Tshirts</div>
-            <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
-              <AiOutlineMinusCircle className='cursor-pointer text-green-800'/>
-              <span className='mx-2 text-sm'>1</span>
-              <AiOutlinePlusCircle className='cursor-pointer text-green-800'/></div>
+              <div className='w-2/3 font-semibold'>Tshirts</div>
+              <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
+                <AiOutlineMinusCircle className='cursor-pointer text-green-800' />
+                <span className='mx-2 text-sm'>1</span>
+                <AiOutlinePlusCircle className='cursor-pointer text-green-800' /></div>
             </div>
           </li>
           <li >
             <div className="item flex my-5">
-            <div className='w-2/3 font-semibold'>Tshirts</div>
-            <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
-              <AiOutlineMinusCircle className='cursor-pointer text-green-800'/>
-              <span className='mx-2 text-sm'>1</span>
-              <AiOutlinePlusCircle className='cursor-pointer text-green-800'/></div>
+              <div className='w-2/3 font-semibold'>Tshirts</div>
+              <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
+                <AiOutlineMinusCircle className='cursor-pointer text-green-800' />
+                <span className='mx-2 text-sm'>1</span>
+                <AiOutlinePlusCircle className='cursor-pointer text-green-800' /></div>
             </div>
           </li>
           <li >
             <div className="item flex my-5">
-            <div className='w-2/3 font-semibold'>Tshirts</div>
-            <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
-              <AiOutlineMinusCircle className='cursor-pointer text-green-800'/>
-              <span className='mx-2 text-sm'>1</span>
-              <AiOutlinePlusCircle className='cursor-pointer text-green-800'/></div>
+              <div className='w-2/3 font-semibold'>Tshirts</div>
+              <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
+                <AiOutlineMinusCircle className='cursor-pointer text-green-800' />
+                <span className='mx-2 text-sm'>1</span>
+                <AiOutlinePlusCircle className='cursor-pointer text-green-800' /></div>
             </div>
           </li>
         </ol>
-        <button className="flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><BsFillBagCheckFill className='m-1'/> Checkout</button>
+        <div className="flex my-6">
+          <button className="flex mx-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"><BsFillBagCheckFill className='m-1' /> Checkout</button>
+          <button className="flex mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"> Clear Cart</button>
+        </div>
       </div>
     </div>
   )
