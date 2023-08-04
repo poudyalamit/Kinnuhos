@@ -12,11 +12,13 @@ export default function App({ Component, pageProps }) {
     try {
       if (localStorage.getItem("cart")) {
         setCart(JSON.parse(localStorage.getItem("cart")))
+        saveCart(JSON.parse(localStorage.getItem("cart")))
       }
     } catch (error) {
       console.error(error);
       localStorage.clear();
     }
+    //eslint-disable-next-line
   }, [])
 
   const saveCart = (myCart) => {

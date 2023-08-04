@@ -7,7 +7,7 @@ const Tshirts = () => {
     <div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap -m-4 justify-center">
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-lg cursor-pointer" onClick={() => router.push('/product/buyit')}>
               <a className="block relative  rounded overflow-hidden">
                 <img alt="ecommerce" className=" md:h-[36vh] h-[30vh] block md:mx-0 m-auto" src="https://m.media-amazon.com/images/I/51H2u5sBL1L._AC_UX569_.jpg" />

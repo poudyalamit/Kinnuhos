@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useRef } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import { BsFillBagCheckFill } from 'react-icons/bs'
-import { AiFillCloseCircle, AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
+import { AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
   const ref = useRef();
@@ -17,7 +17,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
     }
   }
   return (
-    <div className='flex flex-col md:flex-row  md:justify-start justify-center items-center  py-2 shadow-md'>
+    <div className='flex flex-col md:flex-row  md:justify-start justify-center items-center  py-2 shadow-md sticky top-0 bg-white z-10'>
       <div className="logo mx-5">
         <Link href={'/'}><Image src={"/logo.png"} width={50} height={50} style={{ borderRadius: "50%" }} alt='' /></Link>
       </div>
@@ -33,7 +33,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
         <FaShoppingCart className='text-xl md:text-2xl' />
       </div>
 
-      <div ref={ref} className="w-72 h-full sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform translate-x-full z-10">
+      <div ref={ref} className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform ${Object.keys(cart).length===0 ?'translate-x-full' : "translate-x-0" } z-10`}>
         <h2 className='font-bold text-xl text-center'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-5 right-2 cursor-pointer text-2xl text-green-600"><AiFillCloseCircle /></span>
         <ol className='list-decimal font-semibold'>
@@ -44,15 +44,16 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
               <div className="item flex my-5">
                 <div className='w-2/3 font-semibold'>{cart[k].name}</div>
                 <div className=' flex items-center font-semibold justify-center w-1/3 text-lg'>
-                  <AiOutlineMinusCircle onClick={() => removeFromCart(k, 1, cart[k].price, cart[k].size, cart[k].name, cart[k].variant)} className='cursor-pointer text-green-800' />
+                  <AiFillMinusCircle onClick={() => removeFromCart(k, 1, cart[k].price, cart[k].size, cart[k].name, cart[k].variant)} className='cursor-pointer text-green-700' />
                   <span className='mx-2 text-sm'>{cart[k].qty}</span>
-                  <AiOutlinePlusCircle onClick={() => addToCart(k, 1, cart[k].price, cart[k].size, cart[k].name, cart[k].variant)} className='cursor-pointer text-green-800' /></div>
+                  <AiFillPlusCircle onClick={() => addToCart(k, 1, cart[k].price, cart[k].size, cart[k].name, cart[k].variant)} className='cursor-pointer text-green-700' /></div>
               </div>
             </li>
           ))}
         </ol>
+        <div className="font-bold m-2 " >Subtotal: Rs.{subtotal}</div>
         <div className="flex my-6">
-          <button className="flex mx-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"><BsFillBagCheckFill className='m-1' /> Checkout</button>
+          <Link href={'/checkout'}><button className="flex mx-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"><BsFillBagCheckFill className='m-1' /> Checkout</button></Link>
           <button className="flex mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md" onClick={clearCart}> Clear Cart</button>
         </div>
       </div>
