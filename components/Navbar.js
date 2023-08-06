@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
+import { MdAccountCircle } from 'react-icons/md'
 import { BsFillBagCheckFill } from 'react-icons/bs'
 import { AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 
@@ -29,11 +30,12 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
           <Link legacyBehavior href={'/mugs'}><a><li>Mugs</li></a></Link>
         </ul>
       </div>
-      <div onClick={toggleCart} className="cart absolute right-0 mx-5 top-4 cursor-pointer">
-        <FaShoppingCart className='text-xl md:text-2xl' />
+      <div className="cart absolute right-0 mx-5 top-4 cursor-pointer flex">
+       <Link href={'/login'}> <MdAccountCircle className='text-xl md:text-2xl mx-2' /> </Link>
+        <FaShoppingCart onClick={toggleCart} className='text-xl md:text-2xl' />
       </div>
 
-      <div ref={ref} className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform ${Object.keys(cart).length===0 ?'translate-x-full' : "translate-x-0" } z-10`}>
+      <div ref={ref} className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform ${Object.keys(cart).length === 0 ? 'translate-x-full' : "translate-x-0"} z-10`}>
         <h2 className='font-bold text-xl text-center'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-5 right-2 cursor-pointer text-2xl text-green-600"><AiFillCloseCircle /></span>
         <ol className='list-decimal font-semibold'>
