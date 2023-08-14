@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-function Page({ addToCart, products, variants }) {
+function Page({ addToCart, products, variants, buy }) {
   // console.log(products,variants)
   const router = useRouter()
   const { slug } = router.query;
@@ -37,7 +37,7 @@ function Page({ addToCart, products, variants }) {
           <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto px-24 object-cover object-top rounded" src={products.img} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">Kinnuhos</h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{products.title}( {products.size}/{products.color}) </h1>
+            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{products.title} ({products.size}/{products.color}) </h1>
 
             <p className="leading-relaxed">{products.desc}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
@@ -72,7 +72,7 @@ function Page({ addToCart, products, variants }) {
             </div>
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">Rs. {products.price}</span>
-              <button className="flex ml-8 text-white bg-green-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-green-600 rounded">Buy Now</button>
+              <button onClick={()=>{buy(slug, 1, products.price, products.size, products.title, products.color)}} className="flex ml-8 text-white bg-green-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-green-600 rounded">Buy Now</button>
               <button className="flex ml-4 text-white bg-green-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-green-600 rounded" onClick={() => { addToCart(slug, 1, products.price, products.size, products.title, products.color) }}>Add to Cart</button>
               {/* <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
