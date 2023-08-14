@@ -32,7 +32,6 @@ export default function App({ Component, pageProps }) {
   }
   const addToCart = (itemCode, qty, price, size, name, variant) => {
     let newCart = cart;
-    console.log(newCart);
     if (itemCode in cart) {
       newCart[itemCode].qty = cart[itemCode].qty + qty;
     } else {
