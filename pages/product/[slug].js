@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Page({ addToCart, products, variants, buy }) {
-  // console.log(products,variants)
+
   const router = useRouter()
   const { slug } = router.query;
   const [pin, setPin] = useState();
@@ -52,7 +52,7 @@ function Page({ addToCart, products, variants, buy }) {
     window.location = url;
   }
 
-  return <>
+return <>
     <section className="text-gray-600 body-font overflow-hidden">
       <ToastContainer/>
       <div className="container px-5 py-16 mx-auto">
@@ -126,7 +126,7 @@ export async function getServerSideProps(context) {
     await mongoose.connect(process.env.MONGO_URI)
   }
   let products = await Product.findOne({ slug: context.query.slug })
-  let variants = await Product.find({ title: products.title })
+  let variants = await Product.find({ title: products.title, category: products.category })
   let colorSizeSlug = {}
   for (let item of variants) {
     if (Object.keys(colorSizeSlug).includes(item.color)) {

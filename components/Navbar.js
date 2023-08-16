@@ -55,8 +55,8 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
         </ol>
         <div className="font-bold m-2 " >Subtotal: Rs.{subtotal}</div>
         <div className="flex my-6">
-          <Link href={'/checkout'}><button className="flex mx-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"><BsFillBagCheckFill className='m-1' /> Checkout</button></Link>
-          <button className="flex mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md" onClick={clearCart}> Clear Cart</button>
+          <Link href={'/checkout'}><button className="flex mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-md"><BsFillBagCheckFill className='m-1' /> Checkout</button></Link>
+          <button className="flex mr-2 text-white bg-green-500 border-0 py-2 px-1.5 focus:outline-none hover:bg-green-600 rounded text-md" onClick={clearCart}>Clear Cart</button>
         </div>
       </div>
     </div>
