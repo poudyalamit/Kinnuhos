@@ -14,7 +14,8 @@ function Page({ addToCart, products, variants, buy }) {
   const [color, setColor] = useState(products.color);
   const [size, setSize] = useState(products.size);
   const checkService = async () => {
-    let pins = await fetch('http://localhost:3000/api/pincode');
+    const port=process.env.PORT;
+    let pins = await fetch(`http://localhost:${port}/api/pincode`);
     let pinJson = await pins.json();
     if (pinJson.includes(parseInt(pin))) {
       setService(true)
@@ -83,8 +84,6 @@ return <>
                     {Object.keys(variants[color]).includes('L') && <option value={'L'}>L</option>}
                     {Object.keys(variants[color]).includes('XL') && <option value={'XL'}>XL</option>}
                     {Object.keys(variants[color]).includes('XXL') && <option value={'XXL'}>XXL</option>}
-
-
                   </select>
                   <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4" viewBox="0 0 24 24">

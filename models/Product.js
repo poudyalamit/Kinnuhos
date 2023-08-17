@@ -12,5 +12,4 @@ const ProductSchema = new mongoose.Schema({
     availableQty: {type: Number, required:true  },
 
 },{timestamps:true});
-mongoose.models={}
-module.exports=mongoose.model("Product", ProductSchema);
+export default mongoose.models.products || mongoose.model("products", ProductSchema);
