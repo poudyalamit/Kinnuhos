@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
+  const router= useRouter();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -39,6 +41,9 @@ const Signup = () => {
       progress: undefined,
       theme: "light",
       });
+      setTimeout(() => {
+        router.push(`http://localhost:3000/login`)
+      }, 1000);
   }
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">

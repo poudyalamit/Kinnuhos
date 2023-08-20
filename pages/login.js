@@ -11,7 +11,6 @@ const Login = () => {
   const router= useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const port = process.env.PORT;
   const handleChange = (e) => {
     if (e.target.name === 'email') { setEmail(e.target.value) }
     else if (e.target.name === 'password') { setPassword(e.target.value) }
@@ -41,7 +40,7 @@ const Login = () => {
       theme: "light",
     });
     setTimeout(() => {
-      router.push(`http://localhost:${port}`)
+      router.push(`http://localhost:3000`)
     }, 1000);
   }else{
     toast.error(response.error, {
