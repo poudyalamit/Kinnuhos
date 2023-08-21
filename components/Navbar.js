@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import { MdAccountCircle } from 'react-icons/md'
 import { BsFillBagCheckFill } from 'react-icons/bs'
 import { AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 
-const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
+const Navbar = ({ logout, user ,cart, addToCart, removeFromCart, clearCart, subtotal }) => {
+  const [drop, setDrop] =useState(false);
   const ref = useRef();
   const toggleCart = () => {
     if (ref.current.classList.contains('translate-x-full')) {
@@ -19,7 +20,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
   }
   return (
     <div className='flex flex-col md:flex-row  md:justify-start justify-center items-center  py-2 shadow-md sticky top-0 bg-white z-10'>
-      <div className="logo mx-5">
+      <div className="logo mx-5 mr-20">
         <Link href={'/'}><Image src={"/logo.png"} width={50} height={50} style={{ borderRadius: "50%" }} alt='' /></Link>
       </div>
       <div className="nav">
@@ -31,8 +32,20 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subtotal }) => {
         </ul>
       </div>
       <div className="cart absolute right-0 mx-5 top-4 cursor-pointer flex">
-       <Link href={'/login'}> <MdAccountCircle className='text-xl md:text-2xl mx-2' /> </Link>
-        <FaShoppingCart onClick={toggleCart} className='text-xl md:text-2xl' />
+        <a onMouseOver={()=>{setDrop(true)}} onMouseLeave={()=>{setDrop(false)}} >
+     { user.value &&<MdAccountCircle className=' mt-1 text-xl md:text-2xl mx-2'/> }
+     { drop && <div className="absolute right-8 bg-green-300 top-7 rounded-md px-5 py-4 w-32" onMouseOver={()=>{setDrop(true)}} onMouseLeave={()=>{setDrop(false)}} >
+      <ul>
+        <Link href={'/myaccount'}><li className='py-1 hover:text-green-700 text-sm'>My Account</li></Link>
+        <Link href={'/orders'}><li className='py-1 hover:text-green-700 text-sm'>Orders</li></Link>
+        <a onClick={logout}><li className='py-1 hover:text-green-700 text-sm'>Logout</li></a>
+      </ul>
+     </div>}
+     </a>
+       { !user.value && <Link href={'/login'}>  
+       <button className='bg-green-500 hover:bg-green-700 text-white text-sm py-1 px-2 rounded-md mx-2 text-center'>Login</button>
+       </Link> }
+        <FaShoppingCart onClick={toggleCart} className='text-xl md:text-2xl  mt-1' />
       </div>
 
       <div ref={ref} className={`overflow-y-scroll w-72 h-[100vh] sideCart absolute top-0 right-0 bg-green-100 px-8 py-10 transform transition-transform ${Object.keys(cart).length === 0 ? 'translate-x-full' : "translate-x-0"} z-10`}>

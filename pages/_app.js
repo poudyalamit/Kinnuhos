@@ -8,7 +8,9 @@ import { useEffect, useState } from 'react'
 export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState({});
   const [subtotal, setSubTotal] = useState(0);
-  const router= useRouter();
+  const [key, setKey] = useState(0);
+  const [user, setUser] = useState({ value: null });
+  const router = useRouter();
 
   useEffect(() => {
     try {
@@ -20,14 +22,19 @@ export default function App({ Component, pageProps }) {
       console.error(error);
       localStorage.clear();
     }
+    const token = localStorage.getItem("token");
+    if (token !== null) {
+      setUser({ value: token });
+      setKey(Math.random())
+    }
     //eslint-disable-next-line
-  }, [])
+  }, [router.query])
 
   const saveCart = (myCart) => {
     localStorage.setItem("cart", JSON.stringify(myCart));
-    let subt=0;
-    let keys=Object.keys(myCart);
-    for (let index = 0; index<keys.length; index++) {
+    let subt = 0;
+    let keys = Object.keys(myCart);
+    for (let index = 0; index < keys.length; index++) {
       subt += myCart[keys[index]].price * myCart[keys[index]].qty;
     }
     setSubTotal(subt);
@@ -57,18 +64,23 @@ export default function App({ Component, pageProps }) {
     setCart({});
     saveCart({});
   }
-  const buy=(itemCode, qty, price, size, name, variant)=>{
+  const buy = (itemCode, qty, price, size, name, variant) => {
     saveCart({});
-    let newCart ={ itemCode:{qty, price, size, name, variant}};
+    let newCart = { itemCode: { qty, price, size, name, variant } };
     setCart(newCart);
     saveCart(newCart);
     router.push('/checkout')
+  }
+  const logout = () => {
+    localStorage.removeItem("token");
+    setUser({ value: null })
+    setKey(Math.random())
   }
   return <>
     <Head>
       <meta name="viewport" content="width=device-width , initial-scale=1.0 , minimum-scale=1.0" />
     </Head>
-    <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+    <Navbar key={key} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
     <Component buy={buy} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
     <Footer />
   </>
