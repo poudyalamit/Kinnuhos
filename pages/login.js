@@ -29,16 +29,17 @@ const Login = () => {
     setEmail("")
     setPassword("")
     if (response.success) {
-    toast.success('You have successfully logged in!', {
-      position: "bottom-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+      localStorage.setItem('token',response.token);
+      toast.success('You have successfully logged in!', {
+        position: "bottom-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     setTimeout(() => {
       router.push(`http://localhost:3000`)
     }, 1000);
