@@ -6,11 +6,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
-  const router= useRouter();
+  const router = useRouter();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const port=process.env.PORT;
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      router.push('/');
+    }
+    //eslint-disable-next-line
+  }, [])
   const handleChange = (e) => {
     if (e.target.name === 'name') { setName(e.target.value) }
     else if (e.target.name === 'email') { setEmail(e.target.value) }
@@ -40,14 +45,14 @@ const Signup = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
-      setTimeout(() => {
-        router.push(`http://localhost:3000/login`)
-      }, 1000);
+    });
+    setTimeout(() => {
+      router.push(`http://localhost:3000/login`)
+    }, 1000);
   }
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <ToastContainer/>
+      <ToastContainer />
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <Image priority className="mx-auto "
           src={"/logo.png"} width={50} height={50} style={{ borderRadius: "50%" }} alt='' />

@@ -1,14 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  const router= useRouter();
+  const router = useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      router.push('/');
+    }
+    //eslint-disable-next-line
+  }, [])
   const handleChange = (e) => {
     if (e.target.name === 'email') { setEmail(e.target.value) }
     else if (e.target.name === 'password') { setPassword(e.target.value) }
@@ -27,7 +33,7 @@ const Login = () => {
     setEmail("")
     setPassword("")
     if (response.success) {
-      localStorage.setItem('token',response.token);
+      localStorage.setItem('token', response.token);
       toast.success('You have successfully logged in!', {
         position: "bottom-center",
         autoClose: 2000,
@@ -38,21 +44,23 @@ const Login = () => {
         progress: undefined,
         theme: "light",
       });
-    setTimeout(() => {
-      router.push(`http://localhost:3000`)
-    }, 1000);
-  }else{
-    toast.error(response.error, {
-      position: "bottom-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  }
+      setTimeout(() => {
+        if (localStorage.getItem('token')) {
+          router.push('/');
+        }
+      })
+    } else {
+      toast.error(response.error, {
+        position: "bottom-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   }
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -66,7 +74,7 @@ const Login = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        />
+      />
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <Image priority className="mx-auto "
           src={"/logo.png"} width={50} height={50} style={{ borderRadius: "50%" }} alt='' />
@@ -104,8 +112,6 @@ const Login = () => {
             <button type="submit" className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Sign in</button>
           </div>
         </form>
-
-
       </div>
     </div>
   )
