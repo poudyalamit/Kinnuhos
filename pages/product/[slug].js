@@ -14,8 +14,7 @@ function Page({ addToCart, products, variants, buy }) {
   const [color, setColor] = useState(products.color);
   const [size, setSize] = useState(products.size);
   const checkService = async () => {
-    const port=process.env.PORT;
-    let pins = await fetch(`http://localhost:${port}/api/pincode`);
+    let pins = await fetch(`${process.env.Host}/api/pincode`);
     let pinJson = await pins.json();
     if (pinJson.includes(parseInt(pin))) {
       setService(true)
@@ -49,7 +48,7 @@ function Page({ addToCart, products, variants, buy }) {
   }
 
   const refreshVariant = (newsize, newcolor) => {
-    let url = `http://localhost:3000/product/${variants[newcolor][newsize]['slug']}`
+    let url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]['slug']}`
     window.location = url;
   }
 

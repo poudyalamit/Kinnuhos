@@ -25,23 +25,23 @@ const Navbar = ({ logout, user ,cart, addToCart, removeFromCart, clearCart, subt
       </div>
       <div className="nav">
         <ul className='flex items-center space-x-6 font-bold md:text-md'>
-          <Link legacyBehavior href={'/tshirts'}><a><li className='hover:text-green-600'>Tshirts</li></a></Link>
-          <Link legacyBehavior href={'/hoodies'}><a><li className='hover:text-green-600'>Hoodies</li></a></Link>
-          <Link legacyBehavior href={'/stickers'}><a><li className='hover:text-green-600'>Stickers</li></a></Link>
-          <Link legacyBehavior href={'/mugs'}><a><li className='hover:text-green-600'>Mugs</li></a></Link>
+          <Link legacyBehavior href={'/tshirts'}><span><li className='hover:text-green-600'>Tshirts</li></span></Link>
+          <Link legacyBehavior href={'/hoodies'}><span><li className='hover:text-green-600'>Hoodies</li></span></Link>
+          <Link legacyBehavior href={'/stickers'}><span><li className='hover:text-green-600'>Stickers</li></span></Link>
+          <Link legacyBehavior href={'/mugs'}><span><li className='hover:text-green-600'>Mugs</li></span></Link>
         </ul>
       </div>
       <div className="cart absolute right-0 mx-5 top-4 cursor-pointer flex">
-        <a onMouseOver={()=>{setDrop(true)}} onMouseLeave={()=>{setDrop(false)}} >
+        <span onMouseOver={()=>{setDrop(true)}} onMouseLeave={()=>{setDrop(false)}} >
      { user.value &&<MdAccountCircle className=' mt-1 text-xl md:text-2xl mx-2'/> }
      { drop && <div className="absolute right-8  bg-white border shadow-lg top-7 rounded-md px-5 py-4 w-32" onMouseOver={()=>{setDrop(true)}} onMouseLeave={()=>{setDrop(false)}} >
       <ul>
         <Link href={'/myaccount'}><li className='py-1 hover:text-green-700 text-sm font-bold'>My Account</li></Link>
         <Link href={'/orders'}><li className='py-1 hover:text-green-700 text-sm font-bold'>Orders</li></Link>
-        <a onClick={logout}> <li className='py-1 hover:text-green-700 text-sm font-bold'>Logout</li></a>
+        <span onClick={logout}> <li className='py-1 hover:text-green-700 text-sm font-bold'>Logout</li></span>
       </ul>
      </div>}
-     </a>
+     </span>
        { !user.value && <Link href={'/login'}>  
        <button className='bg-green-500 hover:bg-green-700 text-white text-sm py-1 px-2 rounded-md mx-2 text-center'>Login</button>
        </Link> }

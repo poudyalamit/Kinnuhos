@@ -9,7 +9,7 @@ import LoadingBar from 'react-top-loading-bar'
 export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState({});
   const [subtotal, setSubTotal] = useState(0);
-  const [key, setKey] = useState(0);
+  const [key, setKey] = useState();
   const [user, setUser] = useState({ value: null });
   const [progress, setProgress] = useState(0)
   const router = useRouter();
@@ -95,7 +95,7 @@ export default function App({ Component, pageProps }) {
         waitingTime={400}
         onLoaderFinished={() => setProgress(0)}
       />
-    <Navbar key={key} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+    { key && <Navbar key={key} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />}
     <Component buy={buy} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
     <Footer />
   </>
